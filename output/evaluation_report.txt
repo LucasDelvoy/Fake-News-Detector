@@ -1,0 +1,124 @@
+--- EVALUATION REPORT ---
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.96      0.95       206
+         1.0       0.95      0.94      0.95       189
+
+    accuracy                           0.95       395
+   macro avg       0.95      0.95      0.95       395
+weighted avg       0.95      0.95      0.95       395
+
+--- CONFUSION MATRIX ---
+[[197   9]
+ [ 11 178]]
+
+--- EXAMPLES OF FALSE NEGATIVE ---
+                                                  title  ... word_count
+1722  Perfectionist Mayer leads at halfway in decathlon  ...        302
+601   Trump does not intend to fire investigator Mue...  ...        390
+560   Trump on Twitter (May 2): Shutdown, legislatio...  ...        163
+1016  Really tremendous: Trump mimic Alec Baldwin co...  ...        299
+67    Storm Maria brings fear, pain and shock to Pue...  ...        700
+
+[5 rows x 6 columns]
+
+--- FALSE POSITIVE ---
+                                                  title  ... word_count
+1844  LOL! OBAMA’S RADICAL EPA CHIEF Says There Was ...  ...        128
+1021  BEST EXPLANATION EVER Of Why NFL Chose “Pop-St...  ...          7
+24     Trump Is Now Talking About Going To War With ...  ...        527
+913    Sorry, GOP: This Economic Powerhouse Just Got...  ...        309
+1784  CUBA STILL A COMMIE HELLHOLE AFTER OBAMA’S “NO...  ...        231
+1922  N. KOREA WARNS It Will Strike U.S. Bases In S....  ...        878
+1840  WARNING: FEDS PREDICT $30 TRILLION DOLLAR DEBT...  ...        471
+1379  BREAKING: SCREW THE FRONT-RUNNERS Chosen By “W...  ...        308
+1603  THROWING GAS ON RACIAL FIRE? VA Police Confirm...  ...        350
+
+[9 rows x 6 columns]
+✅ Results saved in 'output/evaluation_report.txt'
+====================
+
+--- EVALUATION REPORT ---
+              precision    recall  f1-score   support
+
+         0.0       0.99      0.99      0.99       206
+         1.0       0.99      0.98      0.99       189
+
+    accuracy                           0.99       395
+   macro avg       0.99      0.99      0.99       395
+weighted avg       0.99      0.99      0.99       395
+
+--- CONFUSION MATRIX ---
+[[204   2]
+ [  3 186]]
+
+  --- EXAMPLES OF FALSE NEGATIVE ---
+                                                  title  ... word_count
+560   Trump on Twitter (May 2): Shutdown, legislatio...  ...        163
+1016  Really tremendous: Trump mimic Alec Baldwin co...  ...        299
+127                Trump on Twitter (Dec 20) - Tax Bill  ...        216
+
+[3 rows x 6 columns]
+
+ --- FALSE POSITIVE ---
+                                                  title  ... word_count
+1922  N. KOREA WARNS It Will Strike U.S. Bases In S....  ...        878
+1840  WARNING: FEDS PREDICT $30 TRILLION DOLLAR DEBT...  ...        471
+
+Notes: added title vectorizer
+====================
+
+--- EVALUATION REPORT ---
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99       206
+         1.0       0.99      0.98      0.99       189
+
+    accuracy                           0.99       395
+   macro avg       0.99      0.99      0.99       395
+weighted avg       0.99      0.99      0.99       395
+
+--- CONFUSION MATRIX ---
+[[205   1]
+ [  3 186]]
+
+--- EXAMPLES OF FALSE NEGATIVE ---
+                                                  title  ... word_count
+560   Trump on Twitter (May 2): Shutdown, legislatio...  ...        163
+1016  Really tremendous: Trump mimic Alec Baldwin co...  ...        299
+127                Trump on Twitter (Dec 20) - Tax Bill  ...        216
+
+[3 rows x 6 columns]
+
+ --- FALSE POSITIVE ---
+                                                  title  ... word_count
+1922  N. KOREA WARNS It Will Strike U.S. Bases In S....  ...        878
+
+Test set accuracy : 99.49%
+Notes: added subjectivity and polarity test
+
+
+
+
+
+--- ERROR ANALYSIS ---
+CSV Index : 127
+Title : Trump on Twitter (Dec 20) - Tax Bill
+True label : 1 | Predicted : 0
+------------------------------
+CSV Index : 533
+Title : Australians give up 51,000 illegal guns as govt stands by tough laws
+True label : 1 | Predicted : 0
+------------------------------
+CSV Index : 560
+Title : Trump on Twitter (May 2): Shutdown, legislation, Director Comey
+True label : 1 | Predicted : 0
+------------------------------
+CSV Index : 1016
+Title : Really tremendous: Trump mimic Alec Baldwin co-authors White House 'memoir'
+True label : 1 | Predicted : 0
+------------------------------
+CSV Index : 1922
+Title : N. KOREA WARNS It Will Strike U.S. Bases In S. Korea�Mike Pence Travels To S. Korea As Sign Of Commitment To Ally�China Warns Of �War At Any Moment�
+True label : 0 | Predicted : 1
+------------------------------
