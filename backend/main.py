@@ -8,13 +8,13 @@ if ROOT_DIR not in sys.path:
     sys.path.append(ROOT_DIR)
 
 from core.predict import predict
+from core.scraper import scraper
 
 
 app = FastAPI()
 
 class ArticleInput(BaseModel):
-    news_title: str
-    news_txt: str
+    article_url: str
 
 @app.get("/")
 def read_root():
@@ -22,7 +22,7 @@ def read_root():
 
 @app.post("/predict")
 def read_predict(request: Request, payload: ArticleInput):
-    title = payload.news_title
-    txt = payload.news_txt
+    url = payload.article_url
+    title, txt = scraper(url)
     prediction = predict(title, txt)
     return {"prediction": prediction}

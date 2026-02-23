@@ -2,10 +2,10 @@ import re
 import joblib
 import numpy as np
 from nltk.corpus import stopwords
-from model import Model
+from .model import Model
 from scipy.sparse import hstack
 from torch import FloatTensor, no_grad, load
-from vectorizer import text_subjectivity, title_subj, title_pol
+from .vectorizer import text_subjectivity, title_subj, title_pol
 from output.config import VEC_TEXT_PATH, VEC_TITLE_PATH, MODEL_PATH
 
 model = Model()
