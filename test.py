@@ -2,8 +2,8 @@ import pandas as pd
 import joblib
 import torch
 import numpy
-from model import Model
-from vectorizer import text_subjectivity, title_subj, title_pol
+from core.model import Model
+from core.vectorizer import text_subjectivity, title_subj, title_pol
 from sklearn.feature_extraction.text import TfidfVectorizer
 from scipy.sparse import hstack
 from sklearn.metrics import classification_report, confusion_matrix

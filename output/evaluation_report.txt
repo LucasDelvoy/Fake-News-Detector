@@ -122,3 +122,17 @@ CSV Index : 1922
 Title : N. KOREA WARNS It Will Strike U.S. Bases In S. Korea�Mike Pence Travels To S. Korea As Sign Of Commitment To Ally�China Warns Of �War At Any Moment�
 True label : 0 | Predicted : 1
 ------------------------------
+
+             precision    recall  f1-score   support
+
+         0.0       0.97      0.96      0.97      7081
+         1.0       0.96      0.97      0.97      7227
+
+    accuracy                           0.97     14308
+   macro avg       0.97      0.97      0.97     14308
+weighted avg       0.97      0.97      0.97     14308
+
+[[6802  279]
+ [ 206 7021]]
+
+ Tested with new dataset, 96% accuracy

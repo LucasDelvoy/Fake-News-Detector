@@ -23,7 +23,7 @@ def title_pol(title):
 
 def main():
     # Prepare assets
-    df = pd.read_csv("datasets/cleaned_data.csv")
+    df = pd.read_csv("../datasets/WELFake_Dataset.csv")
     df = df.dropna(subset=["text"])
 
     # Split dataset

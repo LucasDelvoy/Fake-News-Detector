@@ -14,8 +14,7 @@ def remove_stopwords(text):
     return " ".join([w for w in str(text).split() if w not in stopwords_list])
 
 # Read csv file
-df = pd.read_csv("news.csv")
-df = df.sample(2000).reset_index(drop=True)
+df = pd.read_csv("datasets/WELFake_Dataset.csv")
 
 # Drop duplicates and empty entries
 df = df.drop_duplicates()
@@ -33,7 +32,7 @@ df["text"] = df["text"].str.lower().str.replace(r'[^\w\s]', '', regex=True)
 df["text"] = df["text"].apply(remove_stopwords)
 
 # Save cleaned_data
-df.to_csv("cleaned_data.csv", index=False)
+# df.to_csv("cleaned_data.csv", index=False)
 
 fake_texts = df[df["label"] == 0]["text"]
 fake_texts_matrix = vectorizer.fit_transform(fake_texts)
