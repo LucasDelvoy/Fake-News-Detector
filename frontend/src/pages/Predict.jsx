@@ -40,14 +40,20 @@ function Predict () {
 
         <>
         
-            <form onSubmit={handleSubmit}>
-                <input value={url} onChange={(e) => setUrl(e.target.value)}></input>
-                <button type='submit'>Submit</button>
-            </form>
-
             {result ? (
-                <h1>{result.prediction}</h1>
-            ) : null}
+                <>
+                    <h1>{result.prediction}</h1>
+                    {result.prediction === "Real news" && (
+                        <a href={url} target='_blank' rel='noopener noreferrer'>Access this article</a>
+                    )}
+                    <button onClick={() => setResult(null)}>Check another article</button>
+                </>
+            ) : 
+                <form onSubmit={handleSubmit}>
+                    <input value={url} onChange={(e) => setUrl(e.target.value)}></input>
+                    <button type='submit'>Submit</button>
+                </form>
+            }
         
         </>
     )
