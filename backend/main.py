@@ -34,4 +34,7 @@ def read_predict(request: Request, payload: ArticleInput):
     url = payload.article_url
     title, txt = scraper(url)
     prediction = predict(title, txt)
-    return {"prediction": prediction}
+    display_title = title if title else "no title"
+    print(display_title)
+    return {"prediction": prediction,
+            "title": title}

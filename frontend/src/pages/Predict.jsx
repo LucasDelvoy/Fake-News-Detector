@@ -42,7 +42,8 @@ function Predict () {
         
             {result ? (
                 <>
-                    <h1>{result.prediction}</h1>
+                    <h1>{result.title}</h1>
+                    <h3>{result.prediction}</h3>
                     {result.prediction === "Real news" && (
                         <a href={url} target='_blank' rel='noopener noreferrer'>Access this article</a>
                     )}

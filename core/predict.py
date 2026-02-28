@@ -6,6 +6,7 @@ from .model import Model
 from scipy.sparse import hstack
 from torch import FloatTensor, no_grad, load
 from .vectorizer import text_subjectivity, title_subj, title_pol
+from sklearn.linear_model import LogisticRegression
 from output.config import VEC_TEXT_PATH, VEC_TITLE_PATH, MODEL_PATH
 
 model = Model()
@@ -29,6 +30,8 @@ def clean(text):
 def predict(title, text):
     cleaned_text = clean(text)
 
+    print(cleaned_text[:500])
+
     v_text = vec_text.transform([cleaned_text])
     v_title = vec_title.transform([title])
 
@@ -48,6 +51,10 @@ def predict(title, text):
     with no_grad():
         prediction = model(article)
         result = prediction.item()
+
+        trust = result if result > 0.5 else (1 - result)
+        print(f"Probability: {result:.4f}")
+        print(f"Trust: {trust * 100:.2f}%")
 
         if result < 0.5:
             return "Fake news"
